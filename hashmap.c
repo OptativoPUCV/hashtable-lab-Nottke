@@ -47,7 +47,7 @@ int is_equal(void* key1, void* key2){
 void insertMap(HashMap * map, char * key, void * value) {
     int pos=hash(key,map->capacity);
     struct Pair *n=(struct Pair*)malloc(sizeof(struct Pair*));
-    while (map->buckets[pos]!=NULL){
+    while (map->buckets[pos]!=NULL||is_equal(key,map->buckets[pos]->key)){
       pos++;
     }
     strcpy(n->key,key);
@@ -59,8 +59,6 @@ void insertMap(HashMap * map, char * key, void * value) {
 
 void enlarge(HashMap * map) {
     enlarge_called = 1; //no borrar (testing purposes)
-
-
 }
 
 
