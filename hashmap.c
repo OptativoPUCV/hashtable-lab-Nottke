@@ -48,7 +48,7 @@ void insertMap(HashMap * map, char * key, void * value) {
     int i=0;
     int pos=hash(key,map->capacity);
     struct Pair *n=(struct Pair*)malloc(sizeof(struct Pair*));
-    while (map->buckets[pos]!=NULL&&strcmp(map->buckets[pos]->key,key)!=0){
+    while (map->buckets[pos]!=NULL){
       i++;
       map->buckets[pos]=n;
       map->size++;
