@@ -15,3 +15,9 @@ Thu Sep 24 21:20:14 UTC 2020:
  tests:  1|5
 total_score: 10/70
 cb52bbc
+Sat Sep 26 23:03:03 UTC 2020: 
+ hashmap.c | 12 ++++++++----
+ 1 file changed, 8 insertions(+), 4 deletions(-)
+ tests:  1|5
+total_score: 10/70
+22b72dc
