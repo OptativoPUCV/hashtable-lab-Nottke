@@ -79,13 +79,16 @@ void eraseMap(HashMap * map,  char * key) {
 }
 
 void * searchMap(HashMap * map,  char * key) {   
-    unsigned long long pos=hash(key,map->capacity);
+    int pos=hash(key,map->capacity);
     do{
       if(is_equal(map->buckets[pos]->key,key)==1){
         map->current=pos;
         return map->buckets[pos]->value;
       }
       pos++;
+      if(pos==map->capacity){
+        pos=0;
+      }
     }while(map->buckets[pos]->key!=NULL);
     return NULL;
 }
