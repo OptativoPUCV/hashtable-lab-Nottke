@@ -82,7 +82,7 @@ void * searchMap(HashMap * map,  char * key) {
     int pos=hash(key,map->capacity);
     int aux=pos;
     while (pos){
-      if(is_equal(map->buckets[pos],key)){
+      if(is_equal(map->buckets[pos]->key,key)){
         map->current=pos;
         return map->buckets[pos]->key;
       }
@@ -90,11 +90,11 @@ void * searchMap(HashMap * map,  char * key) {
       if(pos==map->capacity){
         pos=0;
       }
-      if(map->buckets[pos]->key==NULL){
-        return NULL;
-      }
       if(pos==aux){
         break;
+      }
+      if(map->buckets[pos]->key==NULL){
+        return NULL;
       }
     }
     return NULL;
