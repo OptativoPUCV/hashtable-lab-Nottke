@@ -60,7 +60,7 @@ void insertMap(HashMap * map, char * key, void * value) {
     map->current=pos;
 }
 
-void enlarge(HashMap * map) {
+void enlarge(HashMap * map){
     enlarge_called = 1; //no borrar (testing purposes)
 }
 
@@ -78,24 +78,12 @@ void eraseMap(HashMap * map,  char * key) {
     
 }
 
-void * searchMap(HashMap * map,  char * key) {   
-    int pos=hash(key,map->capacity);
-    do{
-      if(is_equal(map->buckets[pos]->key,key)==1){
-        map->current=pos;
-        return map->buckets[pos]->value;
-      }
-      pos++;
-      if(pos==map->capacity){
-        pos=0;
-      }
-    }while(map->buckets[pos]->key!=NULL);
-    return NULL;
+void * searchMap(HashMap * map,  char * key) {
+  return NULL;   
 }
 
 void * firstMap(HashMap * map) {
-
-    return NULL;
+  return NULL;
 }
 
 void * nextMap(HashMap * map) {
