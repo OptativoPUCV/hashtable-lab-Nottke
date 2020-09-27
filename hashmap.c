@@ -108,7 +108,7 @@ void * firstMap(HashMap * map) {
     if(map->current==map->capacity){
       pos=0;
     }
-  }while(map->current>pos);
+  }while(map->current<map->capacity);
   return NULL;
 }
 
