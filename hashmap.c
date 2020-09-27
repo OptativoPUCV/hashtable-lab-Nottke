@@ -104,6 +104,7 @@ void * firstMap(HashMap * map) {
       map->current=pos;
       return map->buckets[pos]->value;
     }
+    pos++;
     if(map->capacity==pos){
       pos=0;
     }
