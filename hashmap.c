@@ -98,21 +98,27 @@ void * searchMap(HashMap * map,  char * key) {
 }
 
 void * firstMap(HashMap * map) {
-  int pos=map->current;
-  do{
-    if((map->buckets[pos]!=NULL)&&(map->buckets[pos]->key!=NULL)){
-      map->current=pos;
-      return map->buckets[pos]->value;
-    }
-    pos++;
-    if(map->current==map->capacity){
-      pos=0;
-    }
-  }while(map->current<map->capacity);
+    int pos=map->current;
+    do{
+      if((map->buckets[pos]!=NULL)&&(map->buckets[pos]->key!=NULL)){
+        map->current=pos;
+        return map->buckets[pos]->value;
+      }
+      pos++;
+      if(map->current==map->capacity){
+        pos=0;
+      }
+    }while(map->current<map->capacity);
   return NULL;
 }
 
 void * nextMap(HashMap * map) {
-
+    int pos=map->current;
+    do{
+      if((map->buckets[pos]!=NULL&&(map->buckets[pos]->key!=NULL))){
+        map->current=pos;
+        return map->buckets[pos+1]->value;
+      }
+    }while(pos);
     return NULL;
 }
