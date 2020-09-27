@@ -43,7 +43,6 @@ int is_equal(void* key1, void* key2){
     return 0;
 }
 
-
 void insertMap(HashMap * map, char * key, void * value) {
     int pos=hash(key,map->capacity);
     struct Pair *n=(struct Pair*)malloc(sizeof(struct Pair));
@@ -99,6 +98,19 @@ void * searchMap(HashMap * map,  char * key) {
 }
 
 void * firstMap(HashMap * map) {
+  int pos=map->current;
+  do{
+    if((map->buckets[pos]!=NULL)&&(map->buckets[pos]->key!=NULL)){
+      map->current=pos;
+      return map->buckets[pos]->value;
+    }
+    if(map->capacity==pos){
+      pos=0;
+    }
+    if(map->current==pos){
+      break;
+    }
+  }while(pos<map->current);
   return NULL;
 }
 
