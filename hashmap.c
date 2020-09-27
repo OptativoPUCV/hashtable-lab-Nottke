@@ -49,7 +49,6 @@ void insertMap(HashMap * map, char * key, void * value) {
     struct Pair *n=(struct Pair*)malloc(sizeof(struct Pair));
     while (map->buckets[pos]!=NULL&&is_equal(map->buckets[pos]->key,key)==0){
       pos++;
-      
       if(pos==map->capacity){
         pos=0;
       }
@@ -80,7 +79,18 @@ void eraseMap(HashMap * map,  char * key) {
 }
 
 void * searchMap(HashMap * map,  char * key) {
-  return NULL;   
+    int pos=hash(key,map->capacity);
+    do{
+      if(is_equal(map->buckets[pos]->key,key)==1){
+        map->current=pos;
+        return map->buckets[pos]->value;
+      }
+      pos++;
+      if(pos==map->capacity){
+        pos=0;
+      }
+    }while(map->buckets[pos]->key!=NULL);
+    return NULL;
 }
 
 void * firstMap(HashMap * map) {
