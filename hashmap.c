@@ -84,7 +84,7 @@ void * searchMap(HashMap * map,  char * key) {
     while (pos){
       if(is_equal(map->buckets[pos]->key,key)==0){
         map->current=pos;
-        return map->buckets[pos]->key;
+        return map->buckets[pos]->value;
       }
       pos++;
       if(pos==map->capacity){
