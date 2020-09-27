@@ -120,6 +120,10 @@ void * nextMap(HashMap * map) {
         return map->buckets[pos+1]->value;
         break;
       }
-    }while(pos);
+      pos++;
+      if(map->current==map->capacity){
+        pos=0;
+      }
+    }while(map->current>map->capacity);
     return NULL;
 }
