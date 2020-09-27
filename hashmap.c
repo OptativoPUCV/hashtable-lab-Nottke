@@ -109,6 +109,7 @@ void * firstMap(HashMap * map) {
       pos=0;
     }
     if(map->current==pos){
+      return map->buckets[pos]->value;
       break;
     }
   }while(pos<map->current);
