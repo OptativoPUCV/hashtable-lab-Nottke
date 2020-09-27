@@ -89,7 +89,7 @@ void * searchMap(HashMap * map,  char * key) {
       if(pos==map->capacity){
         pos=0;
       }
-    }while(map->buckets[pos]->key!=NULL);
+    }while(map->buckets[pos]!=NULL);
     return NULL;
 }
 
