@@ -93,7 +93,7 @@ void * searchMap(HashMap * map,  char * key) {
       if(pos==aux){
         break;
       }
-      if(map->buckets[pos]->key==NULL){
+      if(map->buckets[pos]==NULL){
         return NULL;
       }
     }
