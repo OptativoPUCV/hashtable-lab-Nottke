@@ -118,6 +118,7 @@ void * nextMap(HashMap * map) {
       if((map->buckets[pos]!=NULL&&(map->buckets[pos]->key!=NULL))){
         map->current=pos;
         return map->buckets[pos+1]->value;
+        break;
       }
     }while(pos);
     return NULL;
