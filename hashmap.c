@@ -109,13 +109,13 @@ void * firstMap(HashMap * map) {
         pos=0;
       }
     }while(map->current<map->capacity);
-  return NULL;
+    return NULL;
 }
 
 void * nextMap(HashMap * map) {
     int pos=map->current;
-    int aux=pos+1;
     do{
+      int aux=pos+1;
       if((map->buckets[aux]!=NULL&&(map->buckets[aux]->key!=NULL))){
         map->current=aux;
         return map->buckets[aux]->value;
