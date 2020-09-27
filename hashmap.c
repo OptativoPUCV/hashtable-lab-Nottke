@@ -79,7 +79,7 @@ void eraseMap(HashMap * map,  char * key) {
 }
 
 void * searchMap(HashMap * map,  char * key) {   
-    int pos=hash(key,map->capacity);
+    unsigned long long pos=hash(key,map->capacity);
     do{
       if(is_equal(map->buckets[pos]->key,key)==1){
         map->current=pos;
