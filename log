@@ -52,3 +52,9 @@ Sat Sep 26 23:58:44 UTC 2020:
  1 file changed, 1 insertion(+), 1 deletion(-)
  tests:  0|0
 4ee0cfb
+Sun Sep 27 00:33:46 UTC 2020: 
+ hashmap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+ tests:  2|5
+total_score: 20/70
+cf01e48

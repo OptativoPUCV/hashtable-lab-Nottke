@@ -54,8 +54,8 @@ void insertMap(HashMap * map, char * key, void * value) {
         break;
       }
     }
-    strcpy(n->key,key);
-    strcpy(n->value,value);
+    n->key=key;
+    n->value=value;
     map->buckets[pos]=n;
     map->size++;
     pos++;
