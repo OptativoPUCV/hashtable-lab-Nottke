@@ -124,6 +124,6 @@ void * nextMap(HashMap * map) {
       if(map->current==map->capacity){
         pos=0;
       }
-    }while(map->current>map->capacity+1);
+    }while(map->current>map->capacity);
     return NULL;
 }
